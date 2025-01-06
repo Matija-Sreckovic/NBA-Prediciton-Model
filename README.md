@@ -29,11 +29,15 @@ We take in each player's GmSc and difference between OffRtg and DefRtg (hencefor
 
 To get the player's *unweighted rating*, we set
 
-$\textup{rating}_{\textup{unweighted}} = 0.2 \times \textup{coeff}_{\textup{GmSc}} + 0.8 \times \textup{coeff}_{\textup{Rtg}}.$ The value $0.2$ was tuned.
+$$\textup{rating}_{\textup{unweighted}} = 0.2 \times \textup{coeff}_{\textup{GmSc}} + 0.8 \times \textup{coeff}_{\textup{Rtg}}.$$ 
+
+The value $0.2$ was tuned.
 
 To get the player's *weighted rating* we multiply the unweighted rating by a **usage rate coefficient** (we get the player's USG% and assign a coefficient by comparing it to all other games in the last 5 years, similarly to how we obtain the Gmsc and Rtg coefficients) and **minutes_coefficient** (if a player played at least 35 minutes, the coefficient is 1). Precisely, 
 
-$\textup{coeff}_{\textup{min}} = 6.85 \times \frac{\textup{player's minutes played}}{\textup{total team minutes}}.$ In total, 
+$\textup{coeff}_{\textup{min}} = 6.85 \times \frac{\textup{player's minutes played}}{\textup{total team minutes}}.$ 
+
+In total, 
 
 $$\textup{rating}_{\textup{weighted}} = \textup{coeff}_{\textup{USG%}} \times \textup{coeff}_{\textup{min}} \times (0.2 \times \textup{coeff}_{\textup{GmSc}} + 0.8 \times \textup{coeff}_{\textup{Rtg}}).$$
 
