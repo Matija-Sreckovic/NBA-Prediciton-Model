@@ -7,6 +7,8 @@ To see the predictions of each game, open "test_data_" + 2018/2019 + "_" + 2022/
 To see the players' ratings, open "players_test_data_" + 2018/2019 + "_" + 2022/2023 + ".csv"
 
 
+## Explanation of the rating system
+
 ### GameScore, Off/DefRtg
 
 I'll try to explain how the rating system works here. It uses two catch-all advanced stats of a box score: a player's **GameScore** (**GmSc**) and the difference between his **OffRtg** and **DefRtg**. The formula for **GmSc** is:
