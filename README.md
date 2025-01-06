@@ -45,7 +45,7 @@ At the end of this process, we get a vector of ratings for about 10-15 players; 
 
 The players' usage estimates are numbers that take into account each player's average usage rate and minutes played. For example, if a player's average usage rate is 20% this season, 30% last season, and 27% in the last 5 years, and the player played 80 games both this season and the last, then
 
-$$ \textup{player game usage coeff} = 0.6 \times (\textup{this year's USG\%}) + 0.2 \times (\textup{last year's USG\%}) + 0.2 \times (\textup{5 year USG\%}). $$
+$$ \textup{player game usage coeff} = 0.6 \times \textup{this year's USG\%} + 0.2 \times \textup{last year's USG\%} + 0.2 \times \textup{5 year USG\%}. $$
 
 There is also a minutes played usage coefficient, computed as follows: we take the player's average minutes coefficient computed earlier for both this season and last season (so if a player played at least 35 minutes in each game he played, both are $1$), compute a weight $\textup{minutes weight} =  \min(1, \textup{games played this season}  \times 0.1)$, and compute:
 
@@ -55,7 +55,11 @@ Then we get each player's overall weight for the game by multiplying these:
 
 $$\textup{player game weight} = \textup{player games usage coeff} \times \textup{player game minutes coeff}.$$
 
-We take these game weights together into a vector $v_{\textup{weights}}$, and finally,
+We take these game weights together into a vector $v_{\textup{weights, unnormalized}}$, normalize it:
+
+$$v_{\textup{weights}} = \frac{v_{\textup{weights, unnormalized}}} {||v_{\textup{weights, unnormalized}}||_2},$$
+
+where the $2$-norm was chosen because it worked best (the initial idea was the $1$-norm; I tuned this value too). Finally, we take the dot product of $v_{\textup{ratings}}$ and $v_{\textup{weights}}$:
 
 $$\textup{team score} = \langle v_{\textup{ratings}}, v_{\textup{weights}} \rangle.$$
 
