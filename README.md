@@ -57,7 +57,7 @@ At the end of this process, we get a vector of ratings for about 10-15 players; 
 
 The players' usage estimates are numbers that take into account each player's average usage rate and minutes played. For example, if a player's average usage rate is 20% this season, 30% last season, and 27% in the last 5 years, and the player played 80 games both this season and the last, then
 
-$$ \textup{player game usage coeff} = 0.6 \times \textup{this year's USG\%} + 0.2 \times \textup{last year's USG\%} + 0.2 \times \textup{5 year USG\%}. $$
+$$ \textup{player game usage coeff} = 0.6 \times 20 + 0.2 \times 30 + 0.2 \times 27. $$
 
 There is also a minutes played usage coefficient, computed as follows: we take the player's average minutes coefficient computed earlier for both this season and last season (so if a player played at least 35 minutes in each game he played, both are $1$), compute a weight $\textup{minutes weight} =  \min(1, \textup{games played this season}  \times 0.1)$, and compute:
 
