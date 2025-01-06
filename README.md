@@ -41,7 +41,7 @@ $\textup{minutes coefficient} = 6.85 \times \frac{\textup{player's minutes playe
 
 In total, 
 
-$$\textup{weighted rating} = \textup{USG% coefficient} \times \textup{minutes coefficient} \times (0.2 \times \textup{GmSc coefficient} + 0.8 \times \textup{Rtg coefficient}.).$$
+$$\textup{weighted rating} = \textup{USG% coefficient} \times \textup{minutes coefficient} \times (0.2 \times \textup{GmSc coefficient} + 0.8 \times \textup{Rtg coefficient}).$$
 
 ### Players' Long-Term Ratings and a Team's Rating before a Game
 
